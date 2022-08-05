@@ -272,6 +272,10 @@ npx sequelize db:create
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'fogkswjd';
 FLUSH PRIVILEGES;
 
+# back
+app.js 포트번호 3065로는 외부에서 접근이 안된다
+80은 허용돼 있으니까 80으로 바꿔주자.
+
 
 
 
