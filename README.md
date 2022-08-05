@@ -187,3 +187,101 @@ ssh 클라이언트 탭에 맨 아래 명령어를 복사한다.
 그럼 우분투가 뜬다.
 
 거기서 git clone 깃주소 를 한다.
+
+# unutu에 노드 설치해야 한다.
+ssh -i "react-nodebird.pem" ubuntu@ec2-3-37-86-6.ap-northeast-2.compute.amazonaws.com
+
+리눅스 명령어
+// 위에 3개는 혹시 모를 에러를 대비하기 위해 마지막 두개는 필수.
+sudo apt-get update
+sudo apt-get install -y build-essential
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash --
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash --
+sudo apt-get install -y nodejs
+
+그 후 front 폴더 가서 npm i
+
+# back 은 서버를 따로 띄워야해서 따로 해준다.
+// front 와 주소가 미묘하게 다르다 
+ssh -i "react-nodebird.pem" ubuntu@ec2-3-39-23-26.ap-northeast-2.compute.amazonaws.com
+
+똑같이 해준다.
+git clone https://github.com/rae-han/react-next-nodebird
+sudo apt-get update
+sudo apt-get install -y build-essential
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash --
+sudo apt-get install -y nodejs
+
+그리고 back폴더에서 npm i
+
+#
+ec2에 IPv4 퍼블릭 IP가 만든 서버의 주소다
+처음에 ec2에서 ssh https http 허용을 해줬는데 ssh허용을 해줬기에 위 작업을 할수 있는 것이다.
+
+#
+다시 프론트로 가서 npm run build 를 해준다.
+
+ci/cd 귀찮다 젠킨스
+
+스케일링 할때 명령어 다 적기 귀찮다 => 도커
+
+# 서버에 mysql 설치
+sudo apt-get install -y mysql-server - 8q버전
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'fogkswjd';
+
+sudo su = root 계정으로 전환
+
+mysql_secure_installation // 반드시 이거 하기 전에 sudo su
+
+위에서 적은 비밀번호 입력하고
+y
+0 (실제는 2?)
+
+mysql -uroot -p
+비밀번호 설정한대로 됐는지 확인
+
+나중에 비밀번호 한 번 더 바꿔줘야 한다.
+
+#
+
+package.json에
+"start": "node app.js" 추가한다.
+그 후 다시 서버에서 npm start 해준다.
+
+sqlMessage: "Access denied for user 'root'@'localhost' (using password: YES)",
+
+.env 가 안올라갔기 때문에 만들어줘야 한다.
+vim .env
+a나 i를 누르면 글자 입력 가능
+a누르면 아래가 insert로 바뀐다.
+
+다 입력하고 esc누르고
+:wq ( 저장 후 종료 )
+
+cat .env 로 파일 확인
+
+root에서( sudo mysql_secure_installation 를 실행한 이후 해야할 것들 )
+mysql -uroot -p
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'fogkswjd';
+
+npx sequelize db:create
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'fogkswjd';
+FLUSH PRIVILEGES;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
