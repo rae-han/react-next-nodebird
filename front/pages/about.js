@@ -49,7 +49,8 @@ const Profile = () => {
   );
 };
 
-export const getStaticProps = wrapper.getStaticProps(async (context) => {
+// export const getStaticProps = wrapper.getStaticProps(async (context) => {
+export const getServerSideProps = wrapper.getStaticProps(async (context) => {
   // getStaticProps와 getServersideProps의 차이는
   // 언제 접속해도 데이터가 바뀔일이 없으면 static을
   // 접속 상황에 따라 화면이 바껴야하면 serverside를 쓰면 된다.
