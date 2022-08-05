@@ -170,4 +170,20 @@ git remote add origin https://github.com/rae-han/react-next-nodebird
 
 git add .
 git commit -m ""
+위 두개를 합친게
 git commit -am "create: prepare for aws"
+
+git push origin main
+
+# 소스코드 git 에 올린 이유
+aws에 소스 코드를 보낼건데 aws에서 제공하는 툴로 ftp처럼 보낼수도 있고
+깃을 통해서 소스코드 레포지토리를 통해서 다운을
+보통은 후자로 하는 경우가 많다.
+
+aws ec2로 돌아와서 인스턴스를 선택하고 연결을 누른다.
+
+ssh 클라이언트 탭에 맨 아래 명령어를 복사한다.
+키가 있는 곳(prepare 폴더(front, back의 상위 폴더))에서 명령어를 입력하고 yes를 입력한다.
+그럼 우분투가 뜬다.
+
+거기서 git clone 깃주소 를 한다.
