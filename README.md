@@ -272,8 +272,21 @@ npx sequelize db:create
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'fogkswjd';
 FLUSH PRIVILEGES;
 
+# back
+app.js 포트번호 3065로는 외부에서 접근이 안된다
+80은 허용돼 있으니까 80으로 바꿔주자.
 
+# pm2
+foreground process
+터미널 끄면 같이 꺼짐
+background process
+터미널 꺼도 안 꺼짐
 
+sudo node app $ <- 달러 붙이면 백그라운드 실행 가능
+
+npm i pm2
+"start": "sudo node app.js",
+"start": "sudo pm2 start app.js",
 
 
 
