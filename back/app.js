@@ -69,6 +69,6 @@ app.use('/hashtag', hashtagRouter);
 //   console.error(err)
 // })
 
-app.listen(3080, () => {
+app.listen(80, () => {
   console.log('running server');
 })
