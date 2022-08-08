@@ -43,7 +43,7 @@ app.use(express.urlencoded({ extended: true })); // 폼서브밋으로 데이터
 app.use(cors({
   // origin: '*',
   // origin: true, // 위는 모든 주소, 이건 보낸 곳의 주소가 자동으로 들어간다.
-  origin: ['http://localhost:3060', 'nodebird.com'], // 위는 모든 주소, 이건 보낸 곳의 주소가 자동으로 들어간다.
+  origin: ['http://localhost:3060', 'nodebird.com', process.env.FRONT_ADDRESS], // 위는 모든 주소, 이건 보낸 곳의 주소가 자동으로 들어간다.
   credentials: true,
   secret: process.env.COOKIE_SECRET, // 서버에서 특정 정보에 해당하는 id를 암호화된 문자열로 바꿔서 클라이언트에 보내준다고 했는데 그때 암호화할 때 사용된다. 그래서 잘 숨겨야한다.
 }))
