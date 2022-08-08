@@ -286,7 +286,33 @@ sudo node app $ <- 달러 붙이면 백그라운드 실행 가능
 
 npm i pm2
 "start": "sudo node app.js",
-"start": "sudo pm2 start app.js",
+"start": "pm2 start app.js",
+
+sudo npm start // 80번 포트라 sudo 붙여야한다.
+
+pm2 monit 하면 pm2가 안깔려 있어서 안된다.
+
+npx pm2 monit
+
+npx pm2 kill 
+// 다 끄기 아까 sudo 안붙여 줫다면 다시 켜야한다
+// 왜냐면 80번 포트는 우분투로 접근 못하고 루트로만 해야한다
+
+sudo npm start && npx pm2 monit // 안된다?
+
+sudo npx pm2 kill
+sudo npm start // npm i -g pm2
+pm2 start app.js -f
+sudo pm2 start app.js -f
+
+pm2 명령어
+logs 
+logs --error
+kill 종료
+start 파일.js
+reload all 전체 재 실행
+list
+
 
 
 
