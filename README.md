@@ -313,6 +313,7 @@ start 파일.js
 reload all 전체 재 실행
 list
 
+sudo NODE_ENV=production pm2 start next -- start -p 80
 
 
 
