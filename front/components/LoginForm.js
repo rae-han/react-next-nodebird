@@ -53,7 +53,7 @@ const LoginForm = () => {
       </div>
       <ButtonWrapper style={ButtonWrapperStyle}>
         <Button type="primary" htmlType="submit" loading={logInLoading}>로그인</Button>
-        <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+        <Link href="/user/signup"><a><Button>회원가입</Button></a></Link>
       </ButtonWrapper>
     </FormWrapper>
   );
