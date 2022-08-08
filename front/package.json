@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.18.10",
     "@emotion/babel-plugin": "^11.9.5",
     "@faker-js/faker": "^7.1.0",
     "eslint": "^8.14.0",
