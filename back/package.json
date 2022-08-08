@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start:node": "sudo node app.js",
-    "start": "sudo pm2 start app.js",
+    "start": "sudo cross-env NODE_ENV=production pm2 start app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "raehan",
@@ -15,9 +15,12 @@
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "helmet": "^5.1.1",
+    "hpp": "^0.2.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
