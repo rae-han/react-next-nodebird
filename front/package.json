@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "next -p 3060",
     "build": "cross-env ANALYZE=true NODE_ENV=production next build",
-    "build:tmp": "NODE_ENV=production next build",
+    "build:test": "NODE_ENV=production next build",
     "start": "cross-env NODE_ENV=production next start -p 80",
-    "start:tmp": "NODE_ENV=production next start -p 80"
+    "start:test": "NODE_ENV=production next start -p 80"
   },
   "keywords": [],
   "author": "Raehan",
