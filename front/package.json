@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next -p 3060",
     "build": "cross-env ANALYZE=true NODE_ENV=production next build",
+    "build:cli": "cross-env NODE_ENV=production next build",
     "start": "NODE_ENV=production next start -p 80"
   },
   "keywords": [],
