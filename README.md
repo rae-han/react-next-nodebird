@@ -171,7 +171,7 @@ git remote add origin https://github.com/rae-han/react-next-nodebird
 git add .
 git commit -m ""
 위 두개를 합친게
-git commit -am "create: prepare for aws"
+git commit -am ""
 
 git push origin main
 
@@ -312,6 +312,8 @@ kill 종료
 start 파일.js
 reload all 전체 재 실행
 list
+
+# front 
 
 npx pm2 start npm -- start
 
